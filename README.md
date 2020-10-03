@@ -127,3 +127,52 @@
 * 일치 연산자(===)는 피연산자의 타입이 다를경우에 타입을 변경하지 않고 비교한다.
   - 1 == '1'은 true를 리턴
   - 1 === '1'은 false를 리턴
+
+### !!연산자
+* !!연산자의 역할은 피연산자를 불린값으로 변환하는 것이다.
+  - console.log(!!0) // false
+  - console.log(!!1) // true
+  - console.log(!!'string') // true
+  - console.log(!!'') // false
+  - console.log(!!true) // true
+  - console.log(!!false) // false
+  - console.log(!!null) // false
+  - console.log(!!undefined) // false
+  - console.log(!!{}) // true
+  - console.log(!![1,2,3]) // true
+* 객체는 값이 비어있는 빈 객체라도 true로 변환되는 것을 주의해야 한다.
+
+### 함수와 프로토타입 체이닝
+* 자바스크립트에서 가장 중요한 개념 1순위는 '함수'다.
+* 자바스크립트의 함수는 모듈화 처리나 클로저, 객체 생성 등 자바스크립트의 근간이 되는 많은 기능을 제공한다.
+
+### 함수 정의
+* 자바스크립트에서 함수를 생성하는 방법은 3가지가 있다.
+  - 함수 선언문(functon statement)
+  - 함수 표현식(function expression)
+  - Function() 생성자 함수
+* 각각의 방식에 따라 함수 동장에 미묘한 차이가 있다.
+
+### 함수 리터럴
+```
+function add(x, y) {
+  return x + y
+}
+```
+* 함수명을 쓰지 않으면 익명함수로 정의된다.
+* 매개변수의 타입을 따로 적어주지 않는다.
+
+### 함수 선언문
+* 선언문 방식은 리터럴 형식과 같지만 반드시 함수명이 정의 되어야 한다는 점이 다르다.
+
+### 함수 표현식(FunctionExpression.js)
+* 자바스크립트에서는 함수도 하나의 값처럼 취급된다. 따라서 함수를 변수에 할당하는 것이 가능하다.
+* 함수 표현식은 선언문과 문법이 거의 유사하지만 보통 함수의 이름을 사용하지 않는다.
+
+### Function() 생성자 함수를 통한 함수 생성
+* 자바스크립트의 함수도 Function()이라는 기본 내장 생성자 함수로부터 생성된 객체라고 볼 수 있다.
+* Function() 생성자 함수를 사용한 함수 생성 방법은 이제 더 이상 자주 사용되지 않는다.
+```
+let add = new Function('x', 'y', 'return x + y')
+console.log(add(3, 4)) // 7
+```
