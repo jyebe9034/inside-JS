@@ -192,3 +192,17 @@ console.log(add(3, 4)) // 7
   - 함수의 리턴값으로 리턴 가능
   - 동적으로 프로퍼티 생성 및 할당 가능
 * 이러한 특징 때문에 자바스크립트에서는 함수를 일급(first class)객체라고 부른다.
+
+### 함수 객체의 기본 프로퍼티(FuncBasicProperty.js)
+* 함수 객체만의 표준 프로퍼티가 정의되어 있다.
+* ECMAScript5 명세서에는 모든 함수가 length와 prototype프로퍼티를 가져야 한다고 기술하고 있다.
+* name, caller, arguments, __proto__ 프로퍼티 간단하게 살펴보기
+  + name: 함수의 이름
+  + caller: 자신을 호출한 함수
+  + arguments: 함수를 호출할 때 전달된 인자값
+  + __proto__: [[Prototype]]이라는 내부 프로퍼티
+    - Function.prototype 객체는 모든 함수들의 부모 역할을 하는 프로토타입 객체
+* length 프로퍼티
+  + 함수 객체의 length는 함수를 작성할 때 정의한 인자 갯수를 나타낸다.
+* prototype 프로퍼티
+  + 함수 객체의 prototype 프로퍼티는 모든 객체의 부모를 나타내는 내부 프로퍼티인 [[Prototype]]과 다르다.
