@@ -323,3 +323,31 @@ console.log(add(3, 4)) // 7
 * 주의해야 할 점은 prototype 프로퍼티에서 설명했던 함수 객체의 prototype 프로퍼티와 객체의 숨은 프로퍼티인 [[Prototype]] 링크를 구분해야한다는 점이다.
   + 이 둘의 차이점을 이해하려면 자바스크립트의 객체 생성 규칙을 알아야 한다.
   + 자바스크립트에서 모든 객체는 자신을 생성한 생성자 함수의 prototype 프로퍼티가 가리키는 프로토타입 객체를 자신의 부모 객체로 설정하는 [[Prototype]]링크로 연결한다.
+
+### 객체 리터럴 방식으로/생성자 함수로 생성된 객체의 프로토타입 체이닝(ObjectLiteralPrototyoeChaining.js)
+* 자바스크립트에서는 객체가 자신의 프로퍼티뿐만이 아니라 자신의 부모 역할을 하는 프로토타입 객체의 프로퍼티 또한 마치 자신의 것처럼 접근하는게 가능하다. 이것을 가능하게 하는것이 프로토타입 체이닝이다.
+* 자바스크립트에서 모든 객체는 자신을 생성한 생성자 함수의 protytype 프로퍼티가 가리키는 객체를 자신의 프로토타입 객체(부모 객체)로 취급한다.
+
+### 프로토타입 체이닝의 종점
+* 자바스크립트에서 Object.prototype 객체는 프로토타입 체이닝의 종점이다.
+
+### 기본 데이터 타입 확장
+* 자바스크립트의 숫자, 문자열, 배열 등에서 사용되는 표준 메서드들의 경우, 이들의 프로토타입인 Number.protytype, String.protytype, Array.protytype 등에 정의되어 있다.
+* 기본 데이터 타입의 내장 프로토타입 객체 또한 Object.protytype를 자신의 프로토타입으로 가지고 있다.
+* ECMAScript 명세서를 보면 자바스크립트의 각 네이티브 객체별로 공통으로 제공해야 하는 메서드들을 각각의 프로토타입 객체 내에 메서드로 정의해야 한다고 기술하고 있다.
+* 자바스크립트는 Object.protytype나 String.protytype 등과 같이 이러한 표준 빌트인 프로토타입 객체에도 사용자가 직접 정의한 메서드들을 추가하는 것을 허용한다. 
+* 다음 예제처럼 String.protytype객체에 testMethod() 메서드를 추가하면 이 메서드는 모든 문자열에서 접근 가능하다.
+  ```
+    String.prototype.testMethod = function () {
+      console.log('This is the String.prototype.testMethod()')
+    }
+
+    let str = "test is test"
+    str.testMethod()
+
+    console.dir(String.prototype)
+  ```
+
+  ### 프로토타입도 자바스크립트 객체다.(PrototypeIsObject.js)
+  * 함수가 생성될 때, 자신의 prototype 프로퍼티에 연결되는 프로토타입 객체는 디폴트로 constructor 프로퍼티만 가진 객체다.
+  * 당연히 프로토타입 객체 역시 자바스크립트 객체이므로 일반 객체처럼 동적으로 프로퍼티를 추가/삭제 하는것이 가능하다. 그리고 이렇게 변경된 프로퍼티는 실시간으로 프로토타입 체이닝에 반영된다.
