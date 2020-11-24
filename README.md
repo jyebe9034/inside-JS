@@ -446,4 +446,6 @@ console.log(add(3, 4)) // 7
 ### 상속
 * 자바스크립트는 클래스를 기반으로 하는 전통적인 상속을 지원하지 않는다.
 * 자바스크립트의 상속은 프로토타입 체인을 이용해 구현하거나 클래스 기반의 전통적인 상속을 흉내내는 방식으로 이루어진다.
-* 프로토타입을 이용한 상속(inheritanceWithPrototype.js)
+* 프로토타입을 이용한 상속(InheritanceWithPrototype.js)
+* 클래스 기반의 상속(InheritanceWithClass.js)
+* 자식 클래스의 인스턴스에서 부모 클래스의 생서자를 실행시키기 위해 apply 함수를 사용할 수 있다.
