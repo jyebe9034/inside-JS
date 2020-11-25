@@ -449,3 +449,8 @@ console.log(add(3, 4)) // 7
 * 프로토타입을 이용한 상속(InheritanceWithPrototype.js)
 * 클래스 기반의 상속(InheritanceWithClass.js)
 * 자식 클래스의 인스턴스에서 부모 클래스의 생서자를 실행시키기 위해 apply 함수를 사용할 수 있다.
+
+### 캡슐화(InformationHiding.js)
+* 캡슐화란 기본적으로 관련된 여러가지 정보를 하나의 틀 안에 담는 것을 의미한다.
+* 여기서 중요한 것은 정보의 공개 여부이다. 자바스크립트는 정보은닉을 위한 public이나 private 키워드를 지원하지 않는다.
+* 그러나 정보은닉이 불가능한 것은 아니다.
