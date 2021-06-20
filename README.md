@@ -1,4 +1,5 @@
 # inside-JS
+자바스크립트 책 inside-JS
 
 ### 자바 스크립트의 핵심 개념
 1. 객체: null과 undefined를 제외한 모든것을 객체로 다룰 수 있다.
